@@ -17,6 +17,84 @@ body {
   padding: 20px;
 }
 
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar .nav-links li {
+  padding: 10px 20px;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navbar .nav-links li a:hover {
+  color: #4CAF50;
+}
+
+/* Hamburger Menu */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+    width: 79%;
+    text-align: center;
+    /*background-color: #333;*/
+    position: absolute;
+    top: 60px;
+    left: 83px;
+  }
+
+  .navbar .nav-links.active {
+    display: block;
+  }
+
+  .navbar .nav-links li {
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* Header */
+h1 {
+  margin-top: 80px;  /* Add space for the fixed navbar */
+  font-size: 2.5rem;
+  text-align: center;
+  color: #333;
+}
+
 h1 {
   text-align: center;
   color: #333;
@@ -37,7 +115,9 @@ h1 {
 }
 
 /* Input Fields */
-input[type="text"], input[type="number"], button {
+input[type="text"],
+input[type="number"],
+button {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
@@ -47,7 +127,8 @@ input[type="text"], input[type="number"], button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"], input[type="number"] {
+input[type="text"],
+input[type="number"] {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
@@ -115,10 +196,13 @@ ul li {
     font-size: 2rem;
   }
 
-  input[type="text"], input[type="number"], button {
+  input[type="text"],
+  input[type="number"],
+  button {
     max-width: 100%;
   }
 }
+
 
 
   

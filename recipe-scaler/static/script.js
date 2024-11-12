@@ -56,3 +56,13 @@ async function scaleRecipe() {
   }
 }
 
+
+// Get the elements
+const menuIcon = document.getElementById('menu-icon');
+const navLinks = document.getElementById('nav-links');
+
+// Toggle the 'active' class on the navigation links when the hamburger icon is clicked
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
