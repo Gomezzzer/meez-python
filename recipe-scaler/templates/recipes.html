@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    
+
+    <h1>Recipes</h1>
+    <div class="recipe-cards">
+        {% for recipe in recipes %}
+            <div class="recipe-card">
+                <h2>{{ recipe.name }}</h2>
+                <p>{{ recipe.description }}</p>
+                <p><strong>Ingredients:</strong> {{ recipe.amounts }}</p>
+                <p><strong>Yield:</strong> {{ recipe.yield }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
