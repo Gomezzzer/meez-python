@@ -8,8 +8,19 @@
 </head>
 <body>
 
-    
+    <div class="navbar">
+        <div class="logo">Recipe App</div>
+        <div class="menu-icon" id="menu-icon">
+            &#9776;
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="/">Home</a></li> 
+            <li><a href="/recipes">Recipes</a></li>
+            <li><a href="/recipe_scaler">Recipe Scaler</a></li>
+        </ul>
+       </div>
 
+    
     <h1>Recipes</h1>
     <div class="recipe-cards">
         {% for recipe in recipes %}
@@ -21,6 +32,8 @@
             </div>
         {% endfor %}
     </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>

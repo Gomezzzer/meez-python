@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Scaler</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+
+   <!-- Hamburger Navigation -->
+   <div class="navbar">
+    <div class="logo">Recipe App</div>
+    <div class="menu-icon" id="menu-icon">
+        &#9776;
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="/">Home</a></li> 
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/recipe_scaler">Recipe Scaler</a></li>
+    </ul>
+   </div>
+
+  <h1>Recipe Scaler</h1>
+  <div class="container">
+    <form id="ingredientForm">
+      <label for="ingredientName">Ingredient:</label>
+      <input type="text" id="ingredientName" placeholder="Ingredient name" required />
+
+      <label for="ingredientAmount">Amount:</label>
+      <input type="number" id="ingredientAmount" placeholder="Amount" step="any" required />
+
+      <label for="ingredientUnit">Unit:</label>
+      <input type="text" id="ingredientUnit" placeholder="Unit (e.g., grams)" required />
+
+      <button type="button" onclick="addIngredient()">Add Ingredient</button>
+    </form>
+
+    <div class="scaling">
+      <label for="originalServings">Original Servings:</label>
+      <input type="number" id="originalServings" placeholder="Original servings" required />
+
+      <label for="desiredServings">Desired Servings:</label>
+      <input type="number" id="desiredServings" placeholder="Desired servings" required />
+
+      <button type="button" onclick="scaleRecipe()">Scale Recipe</button>
+    </div>
+
+    <h2>Scaled Recipe</h2>
+    <ul id="scaledRecipe"></ul>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

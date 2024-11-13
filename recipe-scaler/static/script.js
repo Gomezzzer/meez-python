@@ -66,3 +66,23 @@ menuIcon.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+const carouselImages = document.querySelector('.carousel-images');
+let scrollPosition = 0;
+const scrollAmount = 200;
+
+function scrollRight() {
+  if (scrollPosition < carouselImages.scrollWidth - carouselImages.clientWidth) {
+    scrollPosition += scrollAmount;
+    carouselImages.style.transform = `translateX(-${scrollPosition}px)`;
+  }
+}
+
+function scrollLeft() {
+  if (scrollPosition > 0) {
+    scrollPosition -= scrollAmount;
+    carouselImages.style.transform = `translateX(-${scrollPosition}px)`;
+  }
+}
+
+// Optional: Add arrows or navigation if needed for additional control
+

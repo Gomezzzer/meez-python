@@ -2,11 +2,15 @@ from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
-# Route to serve the HTML page
+# Route to serve the landing page
 @app.route('/')
 def home():
-    return render_template('index.html')  # Renders the HTML page from the templates folder
+    return render_template('index.html')  # This will render the landing page
 
+# Route to serve the recipe scaler page
+@app.route('/recipe_scaler')
+def recipe_scaler():
+    return render_template('recipe_scaler.html')  # This renders the recipe scaler page
 
 # Existing route to scale the recipe
 @app.route('/scale_recipe', methods=['POST'])
@@ -33,9 +37,9 @@ def scale_recipe():
 
     return jsonify(scaled_ingredients)
 
+# Route to display recipes
 @app.route('/recipes')
 def recipes():
-    # You can pass data to the template if you want, like a list of recipes
     recipes_data = [
         {
             'name': 'Spaghetti Carbonara',
@@ -49,11 +53,11 @@ def recipes():
             'amounts': 'Chicken: 500g, Curry Powder: 1 tbsp, Coconut Milk: 200ml, Onion: 1',
             'yield': '4 servings'
         }
-        # Add more recipes as needed
     ]
     return render_template('recipes.html', recipes=recipes_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
